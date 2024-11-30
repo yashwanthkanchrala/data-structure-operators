@@ -11,6 +11,14 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function (starterindex, mainindex) {
+    return [this.starterMenu[starterindex], this.mainMenu[mainindex]];
+  },
+  orderDelivery: function ({ starterindex, mainindex, time, location }) {
+    return console.log(
+      `order received of ${this.starterMenu[starterindex]} and ${this.mainMenu[mainindex]} at ${time} to ${location}`
+    );
+  },
 
   openingHours: {
     thu: {
@@ -28,7 +36,7 @@ const restaurant = {
   },
 };
 
-const arr = [2, 3, 4];
+/*const arr = [2, 3, 4];
 const [x, y, z] = arr;
 
 console.log(x, y, z);
@@ -46,3 +54,54 @@ let [main, secondary] = restaurant.mainMenu;
 [main, secondary] = [secondary, main];
 
 console.log(main, secondary);
+
+//console.log(restaurant.order(2, 1));
+
+const [starter, mainCourse] = restaurant.order(2, 1);
+
+console.log(starter, mainCourse);
+
+const nested = [2, 3, [5, 6]];
+
+const [i, , j] = nested;
+console.log(i, j);
+const [q, , [w, e]] = nested;
+console.log(q, w, e);
+
+const [m = 9, n = 8, o = 3] = [1, 2];
+console.log(m, n, o);
+*/
+
+/*const { name, openingHours, categories } = restaurant;
+
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+let a = 12;
+let b = 13;
+const obj = { a: 1, b: 2, c: 3 };
+console.log(a, b);
+({ a, b } = obj);
+console.log(a, b);
+
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+
+console.log(o, c);
+
+restaurant.orderDelivery({
+  starterindex: 1,
+  mainindex: 2,
+  time: '22:30',
+  location: 'pragathinagar,sircilla',
+});*/
