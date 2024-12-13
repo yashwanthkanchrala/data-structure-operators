@@ -200,3 +200,26 @@ const users = [{ name: 'yash', email: 'yash@gmail.com' }];
 
 console.log(users[0]?.name ?? 'users does not exist');
 console.log(users[2]?.name ?? 'users does not exist');
+/// properties
+const properties = Object.keys(openingHours);
+
+console.log(properties);
+let opnStr = `we are open on ${properties.length} days: `;
+
+for (const day of Object.keys(openingHours)) {
+  //console.log(day);
+  opnStr += `${day},`;
+}
+console.log(opnStr);
+
+///values
+const values = Object.values(openingHours);
+console.log(values);
+
+///entries
+
+const entries = Object.entries(openingHours);
+//console.log(entries);
+for (const [key, { open, close }] of entries) {
+  console.log(`on ${key} we are open at ${open} and closed at ${close}`);
+}
