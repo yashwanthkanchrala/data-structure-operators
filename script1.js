@@ -167,3 +167,36 @@ rest1.owner &&= 'anonymous';
 rest2.owner &&= 'anonymous';
 
 console.log(rest1, rest2);
+
+const menu1 = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu1);
+
+for (const item of menu1) console.log(item);
+for (const item of menu1.entries()) console.log(item);
+
+for (const [i, el] of menu1.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+///
+//console.log(restaurant.openingHours.mon.open);
+console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant.openingHours.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 10;
+  console.log(`on ${day} we open at ${open}`);
+}
+
+console.log(restaurant.order?.(0, 1) ?? 'method does not exist');
+console.log(restaurant.ordertiffin?.(0, 1) ?? 'method does not exist');
+
+const users = [{ name: 'yash', email: 'yash@gmail.com' }];
+
+console.log(users[0]?.name ?? 'users does not exist');
+console.log(users[2]?.name ?? 'users does not exist');
