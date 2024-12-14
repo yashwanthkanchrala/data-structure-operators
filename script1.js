@@ -223,3 +223,215 @@ const entries = Object.entries(openingHours);
 for (const [key, { open, close }] of entries) {
   console.log(`on ${key} we are open at ${open} and closed at ${close}`);
 }
+const ordersSet = new Set(['pizza', 'pasta', 'pizza', 'brocolli', 'pasta']);
+console.log(ordersSet);
+console.log(new Set('jonas'));
+console.log(new Set());
+console.log(ordersSet.size);
+console.log(ordersSet.has('pizza'));
+console.log(ordersSet.has('chicken'));
+ordersSet.add('garlic bread');
+ordersSet.add('garlic bread');
+ordersSet.delete('pasta');
+//ordersSet.clear();
+console.log(ordersSet);
+
+for (const order2 of ordersSet) console.log(order2);
+
+const staff = ['chef', 'waiter', 'manager', 'chef', 'waiter', 'waiter', 'chef'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set('yashwanth').size);
+
+const rest = new Map();
+rest.set('name', 'classico italiano');
+rest.set('firenzo', 'italy');
+console.log(rest.set('lisbon', 'portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 10)
+  .set('close', 23)
+  .set(true, 'we are opened')
+  .set(false, 'we are closed');
+
+console.log(rest.get('categories'));
+console.log(rest.get(true));
+const time = 17;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+console.log(rest.has('categories'));
+rest.delete(2);
+//rest.clear();
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+const array3 = [1, 2];
+rest.set(array3, 'test');
+console.log(rest.get(array3));
+
+const question = new Map([
+  ['question', 'which is best programming language'],
+  [1, 'c'],
+  [2, 'java'],
+  [3, 'javascript'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'try again'],
+]);
+console.log(question);
+
+console.log(Object.entries(openingHours));
+
+const hourMap = new Map(Object.entries(openingHours));
+//console.log(new Map(Object.entries(openingHours)));
+console.log(hourMap);
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`option ${key}: ${value}`);
+  }
+}
+//const answer = Number(prompt('your answer'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+console.log([...question.keys()]);
+
+const airlines = 'kingfisher';
+const planes = 'yash1810';
+
+console.log(airlines[0]);
+
+console.log(airlines[1]);
+
+console.log(airlines[2]);
+
+console.log('kingfisher'[4]);
+
+console.log(airlines.length);
+console.log('yash1810'.length);
+
+console.log(planes.indexOf(8));
+console.log(airlines.lastIndexOf('i'));
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(airline.indexOf('Portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('bad luck you have got middle seat');
+  } else {
+    console.log("congrats you didn't get middle seat");
+  }
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passenger = 'jOnAs';
+
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@jonas.io \n';
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(email);
+console.log(loginEmail);
+console.log(lowerEmail);
+console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+const pricegb = '223,47^';
+const priceus = pricegb.replace(',', '.').replace('^', '$');
+
+console.log(priceus);
+
+const announcement =
+  ' All passengers come to boarding door 23.boarding door 23';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replaceAll(/door/g, 'gate'));
+
+const plane1 = 'Air A320neo';
+
+console.log(plane1.includes('A32'));
+console.log(plane1.includes('booeing'));
+console.log(plane1.startsWith('Air'));
+
+const checkBaggage = function (item) {
+  const baggage = item.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('sorry, your baggage is not allowed');
+  } else {
+    console.log('welcome abroad');
+  }
+};
+
+checkBaggage('i have Knife');
+checkBaggage('i have Snacks');
+checkBaggage('i have gun');
+
+console.log('a+very+nice+day'.split('+'));
+console.log('yashwanth kancharla'.split(' '));
+
+const [firstname, lastname] = 'yashwanth kancharla'.split(' ');
+console.log(firstname, lastname);
+
+const newName = ['mr.', 'yashwanth', 'kancharla'.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  console.log(names);
+
+  for (const n of names) {
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+capitalizeName('yashwanth kancharla');
+
+console.log('yashwanth'.padStart(14, '*').padEnd(19, '*'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(1234567890));
+
+const message2 = 'hi my name is yashwanth   ';
+console.log(message2.repeat(5));
+
+const message3 = function (n) {
+  console.log(`there are ${n} of planes are waiting ${'yes'.repeat(n)}`);
+};
+message3(3);
